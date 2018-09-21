@@ -8,6 +8,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { OneSignal } from '@ionic-native/onesignal';
+import { Network } from '@ionic-native/network';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { OneSignal } from '@ionic-native/onesignal';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     InAppBrowser,
-    OneSignal
+    OneSignal,
+    Network
   ]
 })
 export class AppModule {}
