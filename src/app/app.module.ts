@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { OneSignal } from '@ionic-native/onesignal';
 import { Network } from '@ionic-native/network';
+import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { Network } from '@ionic-native/network';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     InAppBrowser,
     OneSignal,
-    Network
+    Network,
+    AdMobFree
   ]
 })
 export class AppModule {}
