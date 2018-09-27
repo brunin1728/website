@@ -28,7 +28,7 @@ export class HomePage {
 
 
 
-     //  this.push();
+      this.push();
 
        splashScreen.hide();
 
@@ -45,7 +45,8 @@ admob(){
 
 
     const bannerConfig: AdMobFreeBannerConfig = {
-      isTesting: true,
+      id: 'ca-app-pub-7899546884299152/7847101321',
+      isTesting: false,
       autoShow: true,
       overlap: false,
       offsetTopBar: true
