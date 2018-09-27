@@ -4,7 +4,6 @@ import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser'
 import { OneSignal } from '@ionic-native/onesignal';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
-import { AnimationService, AnimationBuilder } from 'css-animator';
 
 
 @Component({
@@ -12,8 +11,6 @@ import { AnimationService, AnimationBuilder } from 'css-animator';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  @ViewChild('myElement') myElem;
-  private animator: AnimationBuilder;
 
 
   constructor(
@@ -22,7 +19,6 @@ export class HomePage {
     private oneSignal: OneSignal,
     splashScreen: SplashScreen,
     private admobFree: AdMobFree,
-    public animationService: AnimationService
   ) {
 
 
@@ -32,12 +28,12 @@ export class HomePage {
 
        splashScreen.hide();
 
+       this.admob();
 
-       this.animator = animationService.builder();
       }
 
       animateElem() {
-        this.animator.setType('fadeIn').show(this.myElem.nativeElement);
+
       }
 
 
@@ -83,7 +79,7 @@ abrir(){
 
  const browser = this.iab.create('https://www.bnctecnologia.com.br', '_blank', options);
 
- this.admob();
+
 
 }
 
@@ -107,14 +103,9 @@ this.oneSignal.endInit();
 }
 
 
-tempo(){
-  setTimeout("this.admob()", 10000);
-}
 
 
-ionViewDidEnter(){
-this.admob();
-}
+
 
 
 }
