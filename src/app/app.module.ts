@@ -10,12 +10,13 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { OneSignal } from '@ionic-native/onesignal';
 import { Network } from '@ionic-native/network';
 import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
-
+import { AnimationService, AnimatesDirective } from 'css-animator';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    AnimatesDirective
   ],
   imports: [
     BrowserModule,
@@ -33,7 +34,8 @@ import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
     InAppBrowser,
     OneSignal,
     Network,
-    AdMobFree
+    AdMobFree,
+    AnimationService
   ]
 })
 export class AppModule {}

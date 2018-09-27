@@ -1,33 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser';
 import { OneSignal } from '@ionic-native/onesignal';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
+import { AnimationService, AnimationBuilder } from 'css-animator';
+
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+  @ViewChild('myElement') myElem;
+  private animator: AnimationBuilder;
+
 
   constructor(
     public navCtrl: NavController,
     private iab: InAppBrowser,
     private oneSignal: OneSignal,
     splashScreen: SplashScreen,
-    private admobFree: AdMobFree
+    private admobFree: AdMobFree,
+    public animationService: AnimationService
   ) {
 
 
 
 
-       this.push();
-       this.abrir();
+     //  this.push();
+
        splashScreen.hide();
 
 
-  }
+       this.animator = animationService.builder();
+      }
+
+      animateElem() {
+        this.animator.setType('fadeIn').show(this.myElem.nativeElement);
+      }
+
 
 admob(){
 
