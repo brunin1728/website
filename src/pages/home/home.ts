@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser';
 import { OneSignal } from '@ionic-native/onesignal';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
+
 
 
 @Component({
@@ -17,8 +17,7 @@ export class HomePage {
     public navCtrl: NavController,
     private iab: InAppBrowser,
     private oneSignal: OneSignal,
-    splashScreen: SplashScreen,
-    private admobFree: AdMobFree,
+    splashScreen: SplashScreen
   ) {
 
 
@@ -28,7 +27,7 @@ export class HomePage {
 
        splashScreen.hide();
 
-       this.admob();
+      // this.admob();
 
       }
 
@@ -36,28 +35,6 @@ export class HomePage {
 
       }
 
-
-admob(){
-
-
-    const bannerConfig: AdMobFreeBannerConfig = {
-      id: 'ca-app-pub-7899546884299152/7847101321',
-      isTesting: false,
-      autoShow: true,
-      overlap: false,
-      offsetTopBar: true
-
-     };
-     this.admobFree.banner.config(bannerConfig);
-
-     this.admobFree.banner.prepare()
-       .then(() => {
-         // banner Ad is ready
-         // if we set autoShow to false, then we will need to call the show method here
-       })
-       .catch(e => console.log(e));
-
-}
 
 
 

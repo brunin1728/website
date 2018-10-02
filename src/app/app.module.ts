@@ -9,7 +9,6 @@ import { HomePage } from '../pages/home/home';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { OneSignal } from '@ionic-native/onesignal';
 import { Network } from '@ionic-native/network';
-import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
 
 @NgModule({
   declarations: [
@@ -32,7 +31,6 @@ import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
     InAppBrowser,
     OneSignal,
     Network,
-    AdMobFree
   ]
 })
 export class AppModule {}

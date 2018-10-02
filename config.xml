@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="br.com.bnctecnologia" version="0.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="br.com.bnctecnologia" version="0.1.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>BNC Tecnologia</name>
     <description>Aplicação feita para abrir o site do BNC Tecnologia</description>
     <author email="contato@bnctecnologia.com.br" href="https://www.bnctecnologia.com.br">BNC TECNOLOGIA</author>
@@ -87,6 +87,5 @@
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
     <plugin name="onesignal-cordova-plugin" spec="^2.4.3" />
     <plugin name="cordova-plugin-network-information" spec="^2.0.1" />
-    <plugin name="cordova-plugin-admob-free" spec="^0.18.0" />
     <engine name="android" spec="6.4.0" />
 </widget>
