@@ -23,7 +23,8 @@ export class HomePage {
 
 
 
-      this.push();
+      //this.push();
+      this.abrir();
 
        splashScreen.hide();
 
@@ -54,30 +55,12 @@ abrir(){
     location: 'no'
   }
 
- const browser = this.iab.create('https://www.bnctecnologia.com.br', '_blank', options);
+ const browser = this.iab.create('https://bootgram.com.br/', '_blank', options);
 
 
 
 }
 
-
-push(){
-  this.oneSignal.startInit('dd743356-b81b-4ea8-86da-993d273c820d', '1001915559416');
-
-this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
-
-this.oneSignal.handleNotificationReceived().subscribe((msg) => {
-  alert(msg);
-});
-
-this.oneSignal.handleNotificationOpened().subscribe(() => {
-  // do something when a notification is opened
-});
-
-this.oneSignal.endInit();
-
-
-}
 
 
 
