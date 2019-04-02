@@ -23,7 +23,7 @@ export class HomePage {
 
 
 
-      //this.push();
+      this.push();
       this.abrir();
 
        splashScreen.hide();
@@ -42,7 +42,23 @@ export class HomePage {
 
 
 
+      push(){
+        this.oneSignal.startInit('d64fe7ed-fe7f-44be-8853-c0fddefd7088', '376496280412');
 
+      this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
+
+      this.oneSignal.handleNotificationReceived().subscribe((msg) => {
+        alert(msg);
+      });
+
+      this.oneSignal.handleNotificationOpened().subscribe(() => {
+        // do something when a notification is opened
+      });
+
+      this.oneSignal.endInit();
+
+
+      }
 
 
 
@@ -55,7 +71,7 @@ abrir(){
     location: 'no'
   }
 
- const browser = this.iab.create('https://bootgram.com.br/', '_blank', options);
+ const browser = this.iab.create('https://campinasempregos.com.br/', '_blank', options);
 
 
 
