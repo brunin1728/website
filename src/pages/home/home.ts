@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, LoadingController } from 'ionic-angular';
 import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser';
 import { OneSignal } from '@ionic-native/onesignal';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -11,20 +11,31 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  loader: any;
 
   constructor(
     public navCtrl: NavController,
     private iab: InAppBrowser,
     private oneSignal: OneSignal,
-    splashScreen: SplashScreen
+    splashScreen: SplashScreen,
+    public loadingCtrl: LoadingController,
   ) {
 
+this.AbreCarregando();
 
 
 
-      this.push();
-      this.abrir();
+
+let TIME_IN_MS = 5000;
+let hideFooterTimeout = setTimeout( () => {
+  this.loader.dismiss();
+}, TIME_IN_MS);
+
+
+
+
+     this.push();
+     // this.abrir();
 
        splashScreen.hide();
 
@@ -37,13 +48,22 @@ export class HomePage {
       }
 
 
+      AbreCarregando() {
+        this.loader = this.loadingCtrl.create({
+          content: "Carregando..."
+        });
+        this.loader.present();
+      }
 
+    FechaCarregando(){
+      this.loader.dismiss();
+    }
 
 
 
 
       push(){
-        this.oneSignal.startInit('d64fe7ed-fe7f-44be-8853-c0fddefd7088', '376496280412');
+        this.oneSignal.startInit('a1b65cfa-f4d5-46c9-9c76-c0c98aea337e', '376496280412');
 
       this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
 
@@ -71,7 +91,7 @@ abrir(){
     location: 'no'
   }
 
- const browser = this.iab.create('https://campinasempregos.com.br/', '_blank', options);
+ const browser = this.iab.create('https://campinasempregos.com.br', '_blank', options);
 
 
 
