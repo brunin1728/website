@@ -35,7 +35,7 @@ let hideFooterTimeout = setTimeout( () => {
 
 
      this.push();
-     // this.abrir();
+     this.abrir();
 
        splashScreen.hide();
 
@@ -91,7 +91,7 @@ abrir(){
     location: 'no'
   }
 
- const browser = this.iab.create('https://campinasempregos.com.br', '_blank', options);
+ const browser = this.iab.create('https://rosapinkcalcados.com.br/app/wp-login.php', '_self', options);
 
 
 
